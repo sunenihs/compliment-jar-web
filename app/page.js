@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-blue-950 flex flex-col items-center px-4 py-10">
       <div className="text-6xl mb-3">💛</div>
-      <h1 className="text-4xl font-bold text-yellow-400 mb-1">Kindness Jar for 6 Gold</h1>
-      <p className="text-yellow-200 mb-8 text-center">Pick a teacher and leave them a kind note!</p>
+      <h1 className="font-rozha text-5xl text-yellow-400 mb-1">Kindness Jar for 6 Gold</h1>
+      <p className="font-caveat text-2xl text-yellow-200 mb-8 text-center">Pick a teacher and leave them a kind note!</p>
 
       <div className="w-full max-w-md flex flex-col gap-3">
         {TEACHERS.map(teacher => (
@@ -20,7 +20,7 @@ export default function Home() {
         ))}
       </div>
 
-      <Link href="/teacher" className="mt-10 text-sm text-blue-900 font-medium bg-yellow-400 px-5 py-2 rounded-full hover:bg-yellow-300 transition">
+      <Link href="/teacher" className="mt-10 text-sm text-blue-950 font-medium bg-yellow-400 px-5 py-2 rounded-full hover:bg-yellow-300 transition">
         I'm a Teacher 🍎
       </Link>
     </main>

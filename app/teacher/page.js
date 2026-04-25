@@ -5,8 +5,8 @@ export default function TeacherPage() {
   return (
     <main className="min-h-screen bg-blue-950 flex flex-col items-center px-4 py-10">
       <div className="text-6xl mb-3">🍎</div>
-      <h1 className="text-3xl font-bold text-yellow-400 mb-1">Teacher Page</h1>
-      <p className="text-yellow-200 mb-8 text-center">Tap your name to see your notes!</p>
+      <h1 className="font-rozha text-4xl text-yellow-400 mb-1">Teacher Page</h1>
+      <p className="font-caveat text-2xl text-yellow-200 mb-8 text-center">Tap your name to see your notes!</p>
 
       <div className="w-full max-w-md flex flex-col gap-3">
         {TEACHERS.map(teacher => (

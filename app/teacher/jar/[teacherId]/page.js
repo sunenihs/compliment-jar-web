@@ -37,8 +37,8 @@ export default function TeacherJarPage() {
     return (
       <main className="min-h-screen bg-blue-950 flex flex-col items-center justify-center px-4 text-center">
         <div className="text-8xl mb-4">🎁</div>
-        <h2 className="text-3xl font-bold text-yellow-400 mb-2">You have a surprise!</h2>
-        <p className="text-yellow-200 text-lg mb-8">
+        <h2 className="font-rozha text-4xl text-yellow-400 mb-2">You have a surprise!</h2>
+        <p className="font-caveat text-2xl text-yellow-200 mb-8">
           {compliments.length === 0
             ? 'No notes yet — check back soon! 💛'
             : `Your students left you ${compliments.length} kind note${compliments.length !== 1 ? 's' : ''}!`}
@@ -62,8 +62,8 @@ export default function TeacherJarPage() {
   return (
     <main className="min-h-screen bg-blue-950 flex flex-col items-center px-4 py-10">
       <div className="text-5xl mb-2">💛</div>
-      <h1 className="text-2xl font-bold text-yellow-400 mb-1">{teacher.name}</h1>
-      <p className="text-yellow-300 mb-6">
+      <h1 className="font-rozha text-4xl text-yellow-400 mb-1">{teacher.name}</h1>
+      <p className="font-caveat text-xl text-yellow-300 mb-6">
         {unread > 0 ? `${unread} unread note${unread > 1 ? 's' : ''}!` : 'All caught up!'}
       </p>
 
@@ -83,7 +83,7 @@ export default function TeacherJarPage() {
                 <p className="text-yellow-100 font-medium">
                   {item.opened ? item.text : (opening === item.id ? 'Opening...' : 'Click to open...')}
                 </p>
-                <p className="text-yellow-500 text-sm mt-1">From: {item.from}</p>
+                <p className="font-caveat text-lg text-yellow-500 mt-1">From: {item.from}</p>
               </div>
             </div>
           </div>

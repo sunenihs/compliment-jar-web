@@ -30,28 +30,27 @@ export default function TeacherJarPage() {
     setOpening(null);
   }
 
-  if (!teacher) return <p className="text-center mt-20 text-green-400">Teacher not found.</p>;
-  if (loading) return <p className="text-center mt-20 text-green-400">Loading...</p>;
+  if (!teacher) return <p className="text-center mt-20 text-yellow-400">Teacher not found.</p>;
+  if (loading) return <p className="text-center mt-20 text-yellow-400">Loading...</p>;
 
-  // Surprise locked view
   if (!revealed) {
     return (
-      <main className="min-h-screen bg-green-50 flex flex-col items-center justify-center px-4 text-center">
+      <main className="min-h-screen bg-blue-950 flex flex-col items-center justify-center px-4 text-center">
         <div className="text-8xl mb-4">🎁</div>
-        <h2 className="text-3xl font-bold text-green-800 mb-2">You have a surprise!</h2>
-        <p className="text-green-600 text-lg mb-8">
+        <h2 className="text-3xl font-bold text-yellow-400 mb-2">You have a surprise!</h2>
+        <p className="text-yellow-200 text-lg mb-8">
           {compliments.length === 0
-            ? 'No notes yet — check back soon! 💚'
+            ? 'No notes yet — check back soon! 💛'
             : `Your students left you ${compliments.length} kind note${compliments.length !== 1 ? 's' : ''}!`}
         </p>
         <button
           onClick={() => setRevealed(true)}
           disabled={compliments.length === 0}
-          className="bg-green-400 hover:bg-green-500 disabled:opacity-40 text-white font-bold px-8 py-4 rounded-full text-xl transition shadow-lg"
+          className="bg-yellow-400 hover:bg-yellow-300 disabled:opacity-40 text-blue-950 font-bold px-8 py-4 rounded-full text-xl transition shadow-lg"
         >
           Reveal My Notes 🎉
         </button>
-        <Link href="/teacher" className="mt-6 text-sm text-green-500 hover:underline">
+        <Link href="/teacher" className="mt-6 text-sm text-yellow-500 hover:underline">
           ← Back
         </Link>
       </main>
@@ -61,10 +60,10 @@ export default function TeacherJarPage() {
   const unread = compliments.filter(c => !c.opened).length;
 
   return (
-    <main className="min-h-screen bg-green-50 flex flex-col items-center px-4 py-10">
-      <div className="text-5xl mb-2">💚</div>
-      <h1 className="text-2xl font-bold text-green-800 mb-1">{teacher.name}</h1>
-      <p className="text-green-500 mb-6">
+    <main className="min-h-screen bg-blue-950 flex flex-col items-center px-4 py-10">
+      <div className="text-5xl mb-2">💛</div>
+      <h1 className="text-2xl font-bold text-yellow-400 mb-1">{teacher.name}</h1>
+      <p className="text-yellow-300 mb-6">
         {unread > 0 ? `${unread} unread note${unread > 1 ? 's' : ''}!` : 'All caught up!'}
       </p>
 
@@ -75,23 +74,23 @@ export default function TeacherJarPage() {
             onClick={() => !item.opened && openNote(item)}
             className={`rounded-2xl px-5 py-4 border-2 transition cursor-pointer
               ${item.opened
-                ? 'bg-white border-green-200'
-                : 'bg-green-100 border-green-300 hover:border-green-500'}`}
+                ? 'bg-blue-900 border-yellow-700'
+                : 'bg-blue-800 border-yellow-400 hover:border-yellow-200'}`}
           >
             <div className="flex items-center gap-3">
-              <span className="text-2xl">{item.opened ? '💚' : '🎀'}</span>
+              <span className="text-2xl">{item.opened ? '💛' : '🎀'}</span>
               <div className="flex-1">
-                <p className="text-green-800 font-medium">
-                  {item.opened ? item.text : (opening === item.id ? 'Opening...' : 'Tap to open...')}
+                <p className="text-yellow-100 font-medium">
+                  {item.opened ? item.text : (opening === item.id ? 'Opening...' : 'Click to open...')}
                 </p>
-                <p className="text-green-500 text-sm mt-1">From: {item.from}</p>
+                <p className="text-yellow-500 text-sm mt-1">From: {item.from}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <Link href="/teacher" className="mt-8 text-sm text-green-500 hover:underline">
+      <Link href="/teacher" className="mt-8 text-sm text-yellow-500 hover:underline">
         ← Back to Teacher Page
       </Link>
     </main>

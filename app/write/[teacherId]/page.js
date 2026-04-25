@@ -19,7 +19,7 @@ export default function WritePage() {
   const teacher = TEACHERS.find(t => t.id === teacherId);
 
   const [text, setText] = useState('');
-  const [isAnonymous, setIsAnonymous] = useState(true);
+  const [isAnonymous, setIsAnonymous] = useState(false);
   const [from, setFrom] = useState('');
   const [promptIndex, setPromptIndex] = useState(0);
   const [saving, setSaving] = useState(false);

@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Compliment Jar",
+  title: "Kindness Jar for 6 Gold",
   description: "Leave a kind note for your teachers!",
 };
 

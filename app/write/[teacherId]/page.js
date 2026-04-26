@@ -49,7 +49,7 @@ export default function WritePage() {
   if (sent) {
     return (
       <main className="min-h-screen bg-blue-950 flex flex-col items-center justify-center px-4 text-center">
-        <div className="text-7xl mb-4">💛</div>
+        <div className="text-7xl mb-4">{teacher.emoji}</div>
         <h2 className="font-rozha text-4xl text-yellow-400 mb-2">Note sent!</h2>
         <p className="font-caveat text-2xl text-yellow-200 mb-8">{teacher.name} will love reading this 💛</p>
         <Link href="/" className="bg-yellow-400 hover:bg-yellow-300 text-blue-950 font-bold px-6 py-3 rounded-full transition">
@@ -61,7 +61,7 @@ export default function WritePage() {
 
   return (
     <main className="min-h-screen bg-blue-950 flex flex-col items-center px-4 py-10">
-      <div className="text-5xl mb-2">✍️</div>
+      <div className="text-5xl mb-2">{teacher.emoji}</div>
       <h1 className="font-rozha text-4xl text-yellow-400 mb-1">Write a note for</h1>
       <p className="font-caveat text-2xl text-yellow-200 italic mb-6">{teacher.name}</p>
 

@@ -12,7 +12,7 @@ export default function Home() {
         {TEACHERS.map(teacher => (
           <Link key={teacher.id} href={`/write/${teacher.id}`}>
             <div className="bg-blue-900 border-2 border-yellow-500 rounded-2xl px-5 py-4 flex items-center gap-3 shadow-sm hover:shadow-lg hover:bg-blue-800 hover:border-yellow-300 transition cursor-pointer">
-              <span className="text-2xl">{teacher.emoji}</span>
+              <span className={`text-2xl ${teacher.emojiClass || ''}`}>{teacher.emoji}</span>
               <span className="flex-1 text-lg font-semibold text-yellow-300">{teacher.name}</span>
               <span className="text-yellow-500 text-xl">›</span>
             </div>

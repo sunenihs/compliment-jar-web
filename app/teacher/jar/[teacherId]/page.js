@@ -61,7 +61,7 @@ export default function TeacherJarPage() {
 
   return (
     <main className="min-h-screen bg-blue-950 flex flex-col items-center px-4 py-10">
-      <div className="text-5xl mb-2">{teacher.emoji}</div>
+      <div className={`text-5xl mb-2 ${teacher.emojiClass || ''}`}>{teacher.emoji}</div>
       <h1 className="font-rozha text-4xl text-yellow-400 mb-1">{teacher.name}</h1>
       <p className="font-caveat text-xl text-yellow-300 mb-6">
         {unread > 0 ? `${unread} unread note${unread > 1 ? 's' : ''}!` : 'All caught up!'}

@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { TEACHERS } from '@/lib/teachers';
 
@@ -8,9 +8,16 @@ export default function TeacherPage() {
   const [unlocked, setUnlocked] = useState(false);
   const [error, setError] = useState(false);
 
+  useEffect(() => {
+    if (sessionStorage.getItem('teacherUnlocked') === 'true') {
+      setUnlocked(true);
+    }
+  }, []);
+
   function handleSubmit(e) {
     e.preventDefault();
     if (input === '6goldteachers') {
+      sessionStorage.setItem('teacherUnlocked', 'true');
       setUnlocked(true);
       setError(false);
     } else {
